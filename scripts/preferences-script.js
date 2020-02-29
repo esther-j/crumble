@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var elementHeight;
 		var obj;
 		var elTrans;
+		var count = 0;
 		
 		obj = document.getElementById('stacked-cards-block');
 		stackedCardsObj = obj.querySelector('.stackedcards-container');
@@ -213,6 +214,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			updateUi();
 			currentElement();
 			setActiveHidden();
+			changePage();
+
+
 		};
 		
 		//Swipe active card to right.
@@ -229,6 +233,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			updateUi();
 			currentElement();
 			setActiveHidden();
+			changePage();
+
 		};
 		
 		//Swipe active card to top.
@@ -246,6 +252,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			updateUi();
 			currentElement();
 			setActiveHidden();
+			changePage();
+
 		};
 		
 		//Remove transitions from all elements to be moved in each swipe movement to improve perfomance of stacked cards.
@@ -414,6 +422,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //On the actions onSwipeLeft, onSwipeRight and onSwipeTop you need to remove the currentPosition variable (currentPosition = currentPosition + 1) and the function setActiveHidden
 
 	function removeElement() {
+
       currentElementObj.remove();
       if(!(currentPosition >= maxElements)){
 				listElNodesObj[currentPosition].classList.add('stackedcards-active');
@@ -460,6 +469,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				}
 			});	  
 		};
+
+		//Change link to next page if all the elements have been swiped
+		function changePage() {
+			if (currentPosition == maxElements) {
+				console.log("hello");
+				document.location.href = "finish.html";
+			}
+		}
+
 	
 		//Action to update all elements on the DOM for each stacked card.
 		function updateUi() {
