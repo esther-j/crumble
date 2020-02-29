@@ -4,13 +4,43 @@
   <title>Crumble - Preferences</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="scripts/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 
-<body>
-  <div class="middle">
+<body class="preload">
+  <div class="middle display-block standard-block text-left">
     <h1>What are you looking for?</h1>
+    <div class="category-block">
+    	<h3>Categories (max 5)</h3>
+    </div>
+    <div class="category-block">
+    	<h3 class="category-title display-inline">Distance</h3>
+    	<input class="display-inline" type="range" min="0" max="4" style="width: 80%">
+    </div>
+    <div class="category-block">
+      <h3 class="category-title display-inline">Price point</h3>
+      <table id="prices-container" class="display-inline">
+        <tr>
+          <th><h3 id="price1" class="display-inline price unselected-price">$</h3></th>
+          <th><h3 id="price2" class="display-inline price unselected-price">$$</h3></th> 
+          <th><h3 id="price3" class="display-inline price unselected-price">$$$</h3></th>
+          <th><h3 id="price4" class="display-inline price unselected-price">$$$$</h3></th>
+        </tr>
+      </table>
+<!--       <div id="price-container" style="float: right">
+        <h3 id="price1" class="display-inline unselected-price">$</h3>
+        <h3 id="price2" class="display-inline unselected-price">$$</h3>
+        <h3 id="price3" class="display-inline unselected-price">$$$</h3>
+        <h3 id="price4" class="display-inline unselected-price">$$$$</h3>
+      </div> -->
+    </div>
+    <div class="category-block">
+    	<h3 class="category-title display-inline">Must be open now?</h3>
+      <input class="display-inline" type="checkbox">
+    </div>
+    <div id="start-button" style="float: right; margin-bottom: 100px">
+      <h3>show me my matches</h3>
+    </div>
   </div>
-  </body>
+</body>

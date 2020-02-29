@@ -1,0 +1,108 @@
+h1, h2, h3 {
+	font-family: 'Roboto', serif;
+	font-weight: 900;
+}
+
+div {
+ 	line-height: 80%;
+}
+
+.preload * {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+}
+
+.middle {
+ 	margin: 0 auto;
+	transform: translate(0%, 15%);
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.display-block {
+	border: none;
+	display: block;
+}
+
+.display-inline {
+	display: inline;
+}
+
+.standard-block {
+	width: 60%;
+}
+
+/********************************** Main page CSS **********************************/
+
+#start-button {
+	background-color: #F95A00; /* Light orange */
+	border: none;
+	color: white;
+	padding: 0px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    transition: 0.3s;
+  	border-radius: 50px;
+}
+
+#start-button:hover {
+	box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 8px 22px 0 rgba(0,0,0,0.19);
+}
+
+#main-title {
+	font-size: 80pt;
+	color: #FF7A00; /* Orange */
+}
+
+#main-subtitle {
+	opacity: 60%;
+}
+
+#cover-pic {
+	width: 20%;
+ 	border-radius: 50%;
+}
+
+/********************************** Main page CSS **********************************/
+
+.category-block {
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+  	padding: 40px;
+  	margin-top: 50px;
+  	margin-bottom: 50px;
+}
+
+.category-title {
+	margin-right: 30px;
+}
+
+#prices-container {
+	width: 80%;
+}
+
+.price {
+	padding: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	float: center;
+}
+
+.selected-price {
+	color: #FF7A00; /* Orange */
+}
+
+.unselected-price {
+	color: black;
+	opacity: 40%;
+}
