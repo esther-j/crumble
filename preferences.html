@@ -4,7 +4,7 @@
     <title>Crumble - Preferences</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="scripts/preferences-script.js"></script>
   </head>
@@ -12,15 +12,19 @@
   <body class="preload">
     <div class="middle display-block standard-block text-left">
       <h1>What are you looking for?</h1>
-      <div class="category-block">
-      	<h3>Categories (max 5)</h3>
+      <div class="preference-block" display="inline-block">
+      	<h3>Category</h3> 
+          <input id="categories-input" list="categories" name="category" style="cursor: text">
+          <datalist id="categories"></datalist>
+          <input id="category-button" type="button" value="Add">
+          <div id="categories-container"></div>
       </div>
-      <div class="category-block">
-      	<h3 class="category-title display-inline">Distance</h3>
+      <div class="preference-block">
+      	<h3 class="preference-title display-inline">Distance</h3>
       	<input id="range-slider" class="display-inline" type="range" min="0" max="4" style="width: 80%">
       </div>
-      <div class="category-block">
-        <h3 class="category-title display-inline">Price point</h3>
+      <div class="preference-block">
+        <h3 class="preference-title display-inline">Price point</h3>
         <table id="prices-container" class="display-inline">
           <tr>
             <th>
@@ -50,8 +54,8 @@
           </tr>
         </table>
       </div>
-      <div class="category-block">
-      	<h3 class="category-title display-inline">Must be open now?</h3>
+      <div class="preference-block">
+      	<h3 class="preference-title display-inline">Must be open now?</h3>
         <input class="display-inline" type="checkbox">
       </div>
       <a href="selection.html" style="float: right; margin-bottom: 100px">
