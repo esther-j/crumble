@@ -160,6 +160,7 @@ var categoryDict = {
 };
 var dispCategoryList = new Set();
 
+// Initialize
 document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById("range-slider").value = "2";
 
@@ -181,13 +182,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// Add all categories to be an option as a searchable category
 	var categoriesDatalist = document.getElementById("categories-datalist");
 	for (var categoryTitle in categoryDict) {
+		console.log(categoryTitle)
 		var newCategory = document.createElement("option")
 		newCategory.setAttribute("value", categoryTitle);
 		categoriesDatalist.appendChild(newCategory);
 	}
 
 	// Add any valid categories inputted by user when add button is clicked
-	document.getElementById("category-button").addEventListener("click", function(){
+	document.getElementById("category-button").addEventListener("click", function() {
 		console.log("click");
 		var inputCategory = document.getElementById("categories-custom-input").value;
 		if ((inputCategory in categoryDict) && !(dispCategoryList.has(inputCategory))) {
@@ -208,6 +210,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			document.getElementById("category-button").click();
 		}
 	});
+
+	document.getElementById("finish-prefs-button").addEventListener("click", function() {
+		// Get the selected category string 
+		var allCategories = document.getElementsByName("categories");
+		var categoryStr;
+		for (var i = 0; i < allCategories.length; i++) {
+		    if (allCategories[i].checked){
+		        categoryStr = allCategories[i].id;
+		    }
+		}
+
+		// Get the selected price string 
+		var allPrices = document.getElementsByName("prices");
+		var priceStr;
+		for (var i = 0; i < allPrices.length; i++) {
+		    if (allPrices[i].checked){
+		        priceStr = allPrices[i].id;
+		    }
+		}
+
+		// Get the selected distance 
+		var distance = document.getElementById("range-slider").value;
+
+		// Get whether must be open
+		var isOpen = document.getElementById("open-checkbox").checked;
+
+		console.log(priceStr);
+		console.log(categoryStr);
+		console.log(distance);
+		console.log(isOpen);
+	});
 });
 
 // Function adds a given category to the frontend
@@ -218,12 +251,14 @@ function addDisplayCategory(category) {
 	var newCategoryElementLabel = document.createElement("label");
 	newCategoryElementLabel.setAttribute("for", categoryId);
 
+	// Make block radio input with alias id
 	var newCategoryElementInput = document.createElement("input");
 	newCategoryElementInput.setAttribute("type", "radio");
 	newCategoryElementInput.setAttribute("id", categoryId);
 	newCategoryElementInput.setAttribute("name", "categories");
 	newCategoryElementInput.setAttribute("class", "category-input")
 
+	// Set text label
 	var newCategoryElementDiv = document.createElement("div");
 	newCategoryElementDiv.setAttribute("class", "category-display");
 	newCategoryElementDiv.innerHTML = category;

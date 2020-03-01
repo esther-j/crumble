@@ -14,7 +14,7 @@
       <h1>What are you looking for?</h1>
       <div class="preference-block" display="inline-block">
       	<h3>Category</h3> 
-          <input id="categories-custom-input" list="categories" name="category" placeholder="Search category">
+          <input id="categories-custom-input" list="categories-datalist" name="category" placeholder="Search category">
           <datalist id="categories-datalist"></datalist>
           <input id="category-button" type="button" value="Add">
           <div id="categories-container"></div>
@@ -28,26 +28,26 @@
         <table id="prices-container" class="display-inline">
           <tr>
             <th>
-              <label for="price1">
-                <input class="price-input" type="radio" id="price1" name="prices">
+              <label for="$">
+                <input class="price-input" type="radio" id="$" name="prices">
                 <h3 class="display-inline price unselected-price">$</h3>
               </label>
             </th>
             <th>
-              <label for="price2">
-                <input class="price-input" type="radio" id="price2" name="prices">
+              <label for="$$">
+                <input class="price-input" type="radio" id="$$" name="prices">
                 <h3 class="display-inline price unselected-price">$$</h3>
               </label>
             </th>
             <th>
-              <label for="price3">
-                <input class="price-input" type="radio" id="price3" name="prices">
+              <label for="$$$">
+                <input class="price-input" type="radio" id="$$$" name="prices">
                 <h3 class="display-inline price unselected-price">$$$</h3>
               </label>
             </th>
             <th>
-              <label for="price4">
-                <input class="price-input" type="radio" id="price4" name="prices">
+              <label for="$$$$">
+                <input class="price-input" type="radio" id="$$$$" name="prices">
                 <h3 class="display-inline price unselected-price">$$$$</h3>
               </label>
             </th>
@@ -56,10 +56,10 @@
       </div>
       <div class="preference-block">
       	<h3 class="preference-title display-inline">Must be open now?</h3>
-        <input class="display-inline" type="checkbox">
+        <input id="open-checkbox" class="display-inline" type="checkbox">
       </div>
       <a href="selection.html" style="float: right; margin-bottom: 100px">
-        <div id="start-button">
+        <div class="standard-button" id="finish-prefs-button">
           <h3>show me my matches</h3>
         </div>
       </a>

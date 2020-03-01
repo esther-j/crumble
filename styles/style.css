@@ -42,7 +42,7 @@ div {
 
 /********************************** Main page CSS **********************************/
 
-#start-button {
+.standard-button {
 	background-color: #F95A00; /* Light orange */
 	border: none;
 	color: white;
