@@ -164,6 +164,22 @@ var dispCategoryList = new Set();
 document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById("range-slider").value = "2";
 
+	var longitude;
+	var latitude;
+	getLocation();
+	// Source: https://www.w3schools.com/html/html5_geolocation.asp
+	// Get the location of a user
+	function getLocation() {
+	 	if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+	 	} 
+	}
+
+	function showPosition(position) {
+	 	latitude = position.coords.latitude; 
+	 	longitude = position.coords.longitude;
+	}
+
 	// Randomly pick initial 5 categories to display and display them
 	var numCategories = 5;
 	while (dispCategoryList.size != numCategories) {
@@ -240,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log(categoryStr);
 		console.log(distance);
 		console.log(isOpen);
+		console.log(longitude);
+		console.log(latitude);
 	});
 });
 
@@ -267,5 +285,4 @@ function addDisplayCategory(category) {
 	newCategoryElementLabel.appendChild(newCategoryElementDiv);
 
 	categoriesDisplay.appendChild(newCategoryElementLabel);
-
 }
