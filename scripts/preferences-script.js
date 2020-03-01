@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	}
 
 	// Add all categories to be an option as a searchable category
-	var categoriesDatalist = document.getElementById("categories");
+	var categoriesDatalist = document.getElementById("categories-datalist");
 	for (var categoryTitle in categoryDict) {
 		var newCategory = document.createElement("option")
 		newCategory.setAttribute("value", categoryTitle);
@@ -189,21 +189,48 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// Add any valid categories inputted by user when add button is clicked
 	document.getElementById("category-button").addEventListener("click", function(){
 		console.log("click");
-		var inputCategory = document.getElementById("categories-input").value;
+		var inputCategory = document.getElementById("categories-custom-input").value;
 		if ((inputCategory in categoryDict) && !(dispCategoryList.has(inputCategory))) {
 			dispCategoryList.add(inputCategory);
 			addDisplayCategory(inputCategory);
+			document.getElementById(categoryDict[inputCategory]).checked = true;
 			console.log(dispCategoryList);
 		}
-		document.getElementById("categories-input").value = "";
+		document.getElementById("categories-custom-input").value = "";
+	});
+
+	// Source: https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+	// Execute a function when the user releases a key on the keyboard
+	document.getElementById("categories-custom-input").addEventListener("keyup", function(event) {
+		// Number 13 is the "Enter" key on the keyboard
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			document.getElementById("category-button").click();
+		}
 	});
 });
 
 // Function adds a given category to the frontend
 function addDisplayCategory(category) {
+	var categoryId = categoryDict[category];
 	var categoriesDisplay = document.getElementById("categories-container");
-	var newCategoryElement = document.createElement("div");
-	newCategoryElement.setAttribute("class", "category-display");
-	newCategoryElement.innerHTML = category;
-	categoriesDisplay.appendChild(newCategoryElement);
+
+	var newCategoryElementLabel = document.createElement("label");
+	newCategoryElementLabel.setAttribute("for", categoryId);
+
+	var newCategoryElementInput = document.createElement("input");
+	newCategoryElementInput.setAttribute("type", "radio");
+	newCategoryElementInput.setAttribute("id", categoryId);
+	newCategoryElementInput.setAttribute("name", "categories");
+	newCategoryElementInput.setAttribute("class", "category-input")
+
+	var newCategoryElementDiv = document.createElement("div");
+	newCategoryElementDiv.setAttribute("class", "category-display");
+	newCategoryElementDiv.innerHTML = category;
+
+	newCategoryElementLabel.appendChild(newCategoryElementInput);
+	newCategoryElementLabel.appendChild(newCategoryElementDiv);
+
+	categoriesDisplay.appendChild(newCategoryElementLabel);
+
 }

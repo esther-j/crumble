@@ -14,8 +14,8 @@
       <h1>What are you looking for?</h1>
       <div class="preference-block" display="inline-block">
       	<h3>Category</h3> 
-          <input id="categories-input" list="categories" name="category" style="cursor: text">
-          <datalist id="categories"></datalist>
+          <input id="categories-custom-input" list="categories" name="category" placeholder="Search category">
+          <datalist id="categories-datalist"></datalist>
           <input id="category-button" type="button" value="Add">
           <div id="categories-container"></div>
       </div>
@@ -29,25 +29,25 @@
           <tr>
             <th>
               <label for="price1">
-                <input type="radio" id="price1" name="prices">
+                <input class="price-input" type="radio" id="price1" name="prices">
                 <h3 class="display-inline price unselected-price">$</h3>
               </label>
             </th>
             <th>
               <label for="price2">
-                <input type="radio" id="price2" name="prices">
+                <input class="price-input" type="radio" id="price2" name="prices">
                 <h3 class="display-inline price unselected-price">$$</h3>
               </label>
             </th>
             <th>
               <label for="price3">
-                <input type="radio" id="price3" name="prices">
+                <input class="price-input" type="radio" id="price3" name="prices">
                 <h3 class="display-inline price unselected-price">$$$</h3>
               </label>
             </th>
             <th>
               <label for="price4">
-                <input type="radio" id="price4" name="prices">
+                <input class="price-input" type="radio" id="price4" name="prices">
                 <h3 class="display-inline price unselected-price">$$$$</h3>
               </label>
             </th>
