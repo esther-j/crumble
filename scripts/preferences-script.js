@@ -1,9 +1,8 @@
-// categoryDict generated from filtered https://www.yelp.com/developers/documentation/v3/category_list
+// categoryDict data from https://www.yelp.com/developers/documentation/v3/category_list
+// formatted and sorted using python scripts
 var categoryDict = {
 	"Afghan": "afghani",
 	"African": "african",
-	"Senegalese": "senegalese",
-	"South African": "southafrican",
 	"American (New)": "newamerican",
 	"American (Traditional)": "tradamerican",
 	"Arabian": "arabian",
@@ -19,41 +18,38 @@ var categoryDict = {
 	"Brasseries": "brasseries",
 	"Brazilian": "brazilian",
 	"Breakfast & Brunch": "breakfast_brunch",
-	"Pancakes": "pancakes",
 	"British": "british",
 	"Buffets": "buffets",
 	"Bulgarian": "bulgarian",
 	"Burgers": "burgers",
 	"Burmese": "burmese",
 	"Cafes": "cafes",
-	"Themed Cafes": "themedcafes",
 	"Cafeteria": "cafeteria",
 	"Cajun/Creole": "cajun",
+	"Calabrian": "calabrian",
 	"Cambodian": "cambodian",
+	"Cantonese": "cantonese",
 	"Caribbean": "caribbean",
-	"Dominican": "dominican",
-	"Haitian": "haitian",
-	"Puerto Rican": "puertorican",
-	"Trinidadian": "trinidadian",
 	"Catalan": "catalan",
 	"Cheesesteaks": "cheesesteaks",
 	"Chicken Shop": "chickenshop",
 	"Chicken Wings": "chicken_wings",
 	"Chinese": "chinese",
-	"Cantonese": "cantonese",
-	"Dim Sum": "dimsum",
-	"Hainan": "hainan",
-	"Shanghainese": "shanghainese",
-	"Szechuan": "szechuan",
+	"Colombian": "colombian",
 	"Comfort Food": "comfortfood",
+	"Conveyor Belt Sushi": "conveyorsushi",
 	"Creperies": "creperies",
 	"Cuban": "cuban",
 	"Czech": "czech",
 	"Delis": "delis",
+	"Dim Sum": "dimsum",
 	"Diners": "diners",
 	"Dinner Theater": "dinnertheater",
+	"Dominican": "dominican",
+	"Egyptian": "egyptian",
 	"Eritrean": "eritrean",
 	"Ethiopian": "ethiopian",
+	"Falafel": "falafel",
 	"Fast Food": "hotdogs",
 	"Filipino": "filipino",
 	"Fish & Chips": "fishnchips",
@@ -61,8 +57,6 @@ var categoryDict = {
 	"Food Court": "food_court",
 	"Food Stands": "foodstands",
 	"French": "french",
-	"Mauritius": "mauritius",
-	"Reunion": "reunion",
 	"Game Meat": "gamemeat",
 	"Gastropubs": "gastropubs",
 	"Georgian": "georgian",
@@ -70,6 +64,8 @@ var categoryDict = {
 	"Gluten-Free": "gluten_free",
 	"Greek": "greek",
 	"Guamanian": "guamanian",
+	"Hainan": "hainan",
+	"Haitian": "haitian",
 	"Halal": "halal",
 	"Hawaiian": "hawaiian",
 	"Himalayan/Nepalese": "himalayan",
@@ -83,33 +79,21 @@ var categoryDict = {
 	"Indonesian": "indonesian",
 	"Irish": "irish",
 	"Italian": "italian",
-	"Calabrian": "calabrian",
-	"Sardinian": "sardinian",
-	"Sicilian": "sicilian",
-	"Tuscan": "tuscan",
-	"Japanese": "japanese",
-	"Conveyor Belt Sushi": "conveyorsushi",
 	"Izakaya": "izakaya",
 	"Japanese Curry": "japacurry",
-	"Ramen": "ramen",
-	"Teppanyaki": "teppanyaki",
+	"Japanese": "japanese",
 	"Kebab": "kebab",
 	"Korean": "korean",
 	"Kosher": "kosher",
 	"Laotian": "laotian",
 	"Latin American": "latin",
-	"Colombian": "colombian",
-	"Salvadoran": "salvadoran",
-	"Venezuelan": "venezuelan",
+	"Lebanese": "lebanese",
 	"Live/Raw Food": "raw_food",
 	"Malaysian": "malaysian",
+	"Mauritius": "mauritius",
 	"Mediterranean": "mediterranean",
-	"Falafel": "falafel",
 	"Mexican": "mexican",
-	"Tacos": "tacos",
 	"Middle Eastern": "mideastern",
-	"Egyptian": "egyptian",
-	"Lebanese": "lebanese",
 	"Modern European": "modern_european",
 	"Mongolian": "mongolian",
 	"Moroccan": "moroccan",
@@ -118,6 +102,7 @@ var categoryDict = {
 	"Noodles": "noodles",
 	"Pakistani": "pakistani",
 	"Pan Asian": "panasian",
+	"Pancakes": "pancakes",
 	"Persian/Iranian": "persian",
 	"Peruvian": "peruvian",
 	"Pizza": "pizza",
@@ -126,17 +111,26 @@ var categoryDict = {
 	"Pop-Up Restaurants": "popuprestaurants",
 	"Portuguese": "portuguese",
 	"Poutineries": "poutineries",
+	"Puerto Rican": "puertorican",
+	"Ramen": "ramen",
+	"Reunion": "reunion",
 	"Russian": "russian",
 	"Salad": "salad",
+	"Salvadoran": "salvadoran",
 	"Sandwiches": "sandwiches",
+	"Sardinian": "sardinian",
 	"Scandinavian": "scandinavian",
 	"Scottish": "scottish",
 	"Seafood": "seafood",
+	"Senegalese": "senegalese",
+	"Shanghainese": "shanghainese",
+	"Sicilian": "sicilian",
 	"Singaporean": "singaporean",
 	"Slovakian": "slovakian",
 	"Somali": "somali",
 	"Soul Food": "soulfood",
 	"Soup": "soup",
+	"South African": "southafrican",
 	"Southern": "southern",
 	"Spanish": "spanish",
 	"Sri Lankan": "srilankan",
@@ -144,19 +138,26 @@ var categoryDict = {
 	"Supper Clubs": "supperclubs",
 	"Sushi Bars": "sushi",
 	"Syrian": "syrian",
+	"Szechuan": "szechuan",
+	"Tacos": "tacos",
 	"Taiwanese": "taiwanese",
 	"Tapas Bars": "tapas",
 	"Tapas/Small Plates": "tapasmallplates",
+	"Teppanyaki": "teppanyaki",
 	"Tex-Mex": "tex-mex",
 	"Thai": "thai",
+	"Themed Cafes": "themedcafes",
+	"Trinidadian": "trinidadian",
 	"Turkish": "turkish",
+	"Tuscan": "tuscan",
 	"Ukrainian": "ukrainian",
 	"Uzbek": "uzbek",
 	"Vegan": "vegan",
 	"Vegetarian": "vegetarian",
+	"Venezuelan": "venezuelan",
 	"Vietnamese": "vietnamese",
 	"Waffles": "waffles",
-	"Wraps": "wraps"
+	"Wraps": "wrap"
 };
 var dispCategoryList = new Set();
 
@@ -171,29 +172,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// Get the location of a user
 	function getLocation() {
 	 	if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition);
+			navigator.geolocation.getCurrentPosition(setPosition);
 	 	} 
 	}
 
-	function showPosition(position) {
+	function setPosition(position) {
 	 	latitude = position.coords.latitude; 
 	 	longitude = position.coords.longitude;
+	 	console.log(latitude);
+	 	console.log(longitude);	 	
 	}
 
-	// Randomly pick initial 5 categories to display and display them
-	var numCategories = 5;
-	while (dispCategoryList.size != numCategories) {
-		// Pick random property idea from: 
-		// https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
-		var keys = Object.keys(categoryDict);
-		var randomCategory = keys[keys.length * Math.random() << 0];
+	// // Randomly pick initial 5 categories to display and display them
+	// var numCategories = 5;
+	// while (dispCategoryList.size != numCategories) {
+	// 	// Pick random property idea from: 
+	// 	// https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
+	// 	var keys = Object.keys(categoryDict);
+	// 	var randomCategory = keys[keys.length * Math.random() << 0];
 
-		if (randomCategory in dispCategoryList) {
-			continue;
-		}
-		addDisplayCategory(randomCategory);
-		dispCategoryList.add(randomCategory);
-	}
+	// 	if (randomCategory in dispCategoryList) {
+	// 		continue;
+	// 	}
+	// 	addDisplayCategory(randomCategory);
+	// 	dispCategoryList.add(randomCategory);
+	// }
 
 	// Add all categories to be an option as a searchable category
 	var categoriesDatalist = document.getElementById("categories-datalist");
@@ -251,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		// Get whether must be open
 		var isOpen = document.getElementById("open-checkbox").checked;
+		distance = Number(distance) * 1000;
 
 		console.log(priceStr);
 		console.log(categoryStr);
@@ -258,8 +262,81 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log(isOpen);
 		console.log(longitude);
 		console.log(latitude);
+
+		// Handle blank fields
+		var timeout = 100;
+		var onExit = false;
+		setTimeout(function() {
+			if (typeof(longitude) == "undefined" || typeof(latitude) == "undefined") {
+				onExit = true;
+				alert("Please enable location detection");
+				setTimeout(function() {
+					getLocation();
+				}, timeout);
+			}
+			if (typeof(priceStr) == "undefined") {
+				onExit = true;
+				alert("Please pick a price point");
+			}
+			if (typeof(categoryStr) == "undefined") {
+				onExit = true;
+				alert("Please pick a category");
+			}
+		}, timeout);
+		var xhttp = new XMLHttpRequest();
+
+		// Template for api call from ->
+		// Source: https://stackoverflow.com/questions/53357891/how-do-i-resolve-the-cors-error-in-yelp-api-call
+
+		setTimeout(function() {
+			if (!onExit) {
+				$.ajax({
+				    url: queryURL,
+				    method: "GET",
+				    headers: {
+				        "accept": "application/json",
+				        "x-requested-with": "xmlhttprequest",
+				        "Access-Control-Allow-Origin":"*",
+				        "Authorization": `Bearer ${apiKey}`
+				    },
+				    data: {
+				     	longitude: longitude,
+				     	latitude: latitude,
+				     	radius: distance,
+				     	categories: categoryStr,
+				     	limit: 5
+				     	// price: priceStr,
+				     	// open_now: isOpen
+				    },
+				    error: function(xhr, status, error) {
+						// var err = eval("(" + xhr.responseText + ")");
+						alert("Couldn't find any locations");
+					}
+				}).then(function(results) {
+				 	console.log("success");
+				 	results = JSON.stringify(results);
+				    console.log(results);
+				    sessionStorage.results = results;
+				    document.location.href = "selection.html";
+				});
+			}
+		}, timeout);
+		
 	});
 });
+
+var visited=something;
+
+function doStuff() {
+    if(something===something_cachedValue) {//we want it to match
+        setTimeout(doStuff, 50);//wait 50 millisecnds then recheck
+        return;
+    }
+    something_cachedValue=something;
+    //real action
+}
+
+doStuff();
 
 // Function adds a given category to the frontend
 function addDisplayCategory(category) {

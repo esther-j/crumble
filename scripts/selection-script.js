@@ -1,5 +1,5 @@
 /* 
-Entire file written by - 
+Adapted variation of:
 Source Credit: https://codepen.io/bmarcelino/pen/vRYPXV 
 */
 
@@ -472,8 +472,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		//Change link to next page if all the elements have been swiped
 		function changePage() {
+
 			if (currentPosition == maxElements) {
-				console.log("hello");
 				document.location.href = "finish.html";
 			}
 		}
@@ -701,6 +701,80 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	}
 	
+	if (sessionStorage.results) {
+		var data = JSON.parse(sessionStorage.results);
+		console.log(data);
+		createCards(data.businesses);
+	} else {
+		console.log("fail");
+	}
+
+	function createCards(data) {
+		console.log(document.getElementsByClassName('stackedcards-container'));
+		var container = document.getElementsByClassName('stackedcards-container')[0];
+		for (business of data) {
+			var cardItem = document.createElement('div');
+			cardItem.className = 'card-item';
+
+			let image = document.createElement('img');
+			image.src = business.image_url;
+			image.className = 'display-img';
+
+			let textInfo = document.createElement('div');
+			textInfo.className = 'text-display';
+			let title = document.createElement('h1');
+			title.innerHTML = business.name;
+
+			var dir = "images/yelp_stars/web_and_ios/regular/regular_";
+			var imgSrc;
+			switch (business.rating) {
+				case 0:
+					imgSrc = dir.concat("0.png");
+					break;
+				case 1:
+					imgSrc = dir.concat("1.png");
+					break;
+				case 1.5:
+					imgSrc = dir.concat("1_half.png");
+					break;
+				case 2:
+					imgSrc = dir.concat("2.png");
+					break;
+				case 2.5:
+					imgSrc = dir.concat("2_half.png");
+					break;
+				case 3:
+					imgSrc = dir.concat("3.png");
+					break;
+				case 3.5:
+					imgSrc = dir.concat("3_half.png");
+					break;
+				case 4:
+					imgSrc = dir.concat("4.png");
+					break;
+				case 4.5:
+					imgSrc = dir.concat("4_half.png");
+					break;
+				case 5:
+					imgSrc = dir.concat("5.png");
+					break;
+				default:
+					console.log("error");
+			}
+			let rating = document.createElement('img');
+			rating.src = imgSrc;
+
+
+			textInfo.appendChild(title);
+			textInfo.appendChild(rating);
+
+			cardItem.appendChild(image);
+			cardItem.appendChild(textInfo);
+
+			container.appendChild(cardItem);
+		}
+	}
+
 	stackedCards();
 	
 });
