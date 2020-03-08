@@ -183,21 +183,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	 	console.log(longitude);	 	
 	}
 
-	// // Randomly pick initial 5 categories to display and display them
-	// var numCategories = 5;
-	// while (dispCategoryList.size != numCategories) {
-	// 	// Pick random property idea from: 
-	// 	// https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
-	// 	var keys = Object.keys(categoryDict);
-	// 	var randomCategory = keys[keys.length * Math.random() << 0];
-
-	// 	if (randomCategory in dispCategoryList) {
-	// 		continue;
-	// 	}
-	// 	addDisplayCategory(randomCategory);
-	// 	dispCategoryList.add(randomCategory);
-	// }
-
 	// Add all categories to be an option as a searchable category
 	var categoriesDatalist = document.getElementById("categories-datalist");
 	for (var categoryTitle in categoryDict) {
@@ -207,37 +192,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		categoriesDatalist.appendChild(newCategory);
 	}
 
-	// Add any valid categories inputted by user when add button is clicked
-	document.getElementById("category-button").addEventListener("click", function() {
-		console.log("click");
-		var inputCategory = document.getElementById("categories-custom-input").value;
-		if ((inputCategory in categoryDict) && !(dispCategoryList.has(inputCategory))) {
-			dispCategoryList.add(inputCategory);
-			addDisplayCategory(inputCategory);
-			document.getElementById(categoryDict[inputCategory]).checked = true;
-			console.log(dispCategoryList);
-		}
-		document.getElementById("categories-custom-input").value = "";
-	});
-
-	// Source: https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
-	// Execute a function when the user releases a key on the keyboard
-	document.getElementById("categories-custom-input").addEventListener("keyup", function(event) {
-		// Number 13 is the "Enter" key on the keyboard
-		if (event.keyCode === 13) {
-			event.preventDefault();
-			document.getElementById("category-button").click();
-		}
-	});
-
 	document.getElementById("finish-prefs-button").addEventListener("click", function() {
 		// Get the selected category string 
-		var allCategories = document.getElementsByName("categories");
 		var categoryStr;
-		for (var i = 0; i < allCategories.length; i++) {
-		    if (allCategories[i].checked){
-		        categoryStr = allCategories[i].id;
-		    }
+		var inputCategory = document.getElementById("categories-custom-input").value;
+		if (inputCategory in categoryDict) {
+			categoryStr = inputCategory;
+		} else {
+			alert("Please pick a valid category");
+			document.getElementById("categories-custom-input").value = "";
+			return;
 		}
 
 		// Get the selected price string 
@@ -277,10 +241,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if (typeof(priceStr) == "undefined") {
 				onExit = true;
 				alert("Please pick a price point");
-			}
-			if (typeof(categoryStr) == "undefined") {
-				onExit = true;
-				alert("Please pick a category");
 			}
 		}, timeout);
 		var xhttp = new XMLHttpRequest();
