@@ -305,16 +305,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				     	latitude: latitude,
 				     	radius: distance,
 				     	categories: categoryStr,
-				     	limit: 5,
+				     	limit: 10,
 				     	price: priceStr,
 				     	open_now: isOpen
 				    },
 				    error: function(xhr, status, error) {
 						// var err = eval("(" + xhr.responseText + ")");
-						alert("Couldn't find any locations");
+						alert("Error: Please try submitting again");
 					}
 				}).then(function(results) {
 				 	console.log("success");
+				 	if (results.total == 0) {
+				 		alert("Couldn't find any locations with the given categories");
+				 		return;
+				 	}
 				 	results = JSON.stringify(results);
 				    console.log(results);
 				    sessionStorage.results = results;

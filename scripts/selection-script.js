@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var obj;
 		var elTrans;
 		var count = 0;
+		var userSelections = [];
 		
 		obj = document.getElementById('stacked-cards-block');
 		stackedCardsObj = obj.querySelector('.stackedcards-container');
@@ -200,7 +201,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				transformUi(1000, 0, 0, rightObj); //Move rightOverlay
 				resetOverlayRight();
 			}
-	
+
+			// keep track of user selections
+			var data = JSON.parse(sessionStorage.results);
+			userSelections.push(data.businesses[currentPosition]);
 			currentPosition = currentPosition + 1;
 			updateUi();
 			currentElement();
@@ -413,6 +417,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 			if (currentPosition == maxElements) {
 				document.location.href = "finish.html";
+				sessionStorage.selections = JSON.stringify(userSelections);
 			}
 		}
 
@@ -644,6 +649,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			textInfo.className = 'text-display';
 			let title = document.createElement('h1');
 			title.innerHTML = business.name;
+			title.className = 'card-title';
 
 			var rating = document.createElement('img');
 			rating.src = getRating(rating);
