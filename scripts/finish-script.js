@@ -4,6 +4,42 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var selectionContainer = document.getElementById('results-container');
     displaySelections();
+    displayMap();
+    // inspired from https://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example
+    function displayMap() {
+    	var locations = [];
+    	var counter = 1;
+    	for (business of selections) {
+    		locations.push([business.name, parseFloat(business.coordinates.latitude), parseFloat(business.coordinates.longitude), counter]);
+    		counter++;
+    	}
+
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	      zoom: 10,
+	      center: new google.maps.LatLng(sessionStorage.latitude, sessionStorage.longitude),
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    });
+
+	    var infowindow = new google.maps.InfoWindow();
+
+	    var marker, i;
+
+	    for (i = 0; i < locations.length; i++) {  
+	      marker = new google.maps.Marker({
+	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	        map: map
+	      });
+
+	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	        return function() {
+	          infowindow.setContent(locations[i][0]);
+	          infowindow.open(map, marker);
+	        }
+	      })(marker, i));
+	    }
+    }
+
+
     function displaySelections() {
     	for (selection of selections) {
     		let display = document.createElement('div');
@@ -56,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			let link = document.createElement('a');
 			link.href = selection.url;
 			link.innerHTML = "Visit on Yelp";
+			link.target = "_blank";
 
 			textDisplay.appendChild(title);
 			textDisplay.appendChild(rating);

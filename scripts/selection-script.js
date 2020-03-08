@@ -416,8 +416,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		function changePage() {
 
 			if (currentPosition == maxElements) {
-				document.location.href = "finish.html";
 				sessionStorage.selections = JSON.stringify(userSelections);
+				document.location.href = "finish.html";
 			}
 		}
 

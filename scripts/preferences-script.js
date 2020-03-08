@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var categoryStr;
 		var inputCategory = document.getElementById("categories-custom-input").value;
 		if (inputCategory in categoryDict) {
-			categoryStr = inputCategory;
+			categoryStr = categoryDict[inputCategory];
 		} else {
 			alert("Please pick a valid category");
 			document.getElementById("categories-custom-input").value = "";
@@ -282,6 +282,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				 	results = JSON.stringify(results);
 				    console.log(results);
 				    sessionStorage.results = results;
+				   	sessionStorage.latitude = latitude.toString();
+					sessionStorage.longitude = longitude.toString();
 				    document.location.href = "selection.html";
 				});
 			}
