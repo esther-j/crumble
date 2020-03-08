@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		// Template for api call from ->
 		// Source: https://stackoverflow.com/questions/53357891/how-do-i-resolve-the-cors-error-in-yelp-api-call
-
+		
 		setTimeout(function() {
 			if (!onExit) {
 				$.ajax({
@@ -304,9 +304,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				     	latitude: latitude,
 				     	radius: distance,
 				     	categories: categoryStr,
-				     	limit: 5
-				     	// price: priceStr,
-				     	// open_now: isOpen
+				     	limit: 5,
+				     	price: priceStr,
+				     	open_now: isOpen
 				    },
 				    error: function(xhr, status, error) {
 						// var err = eval("(" + xhr.responseText + ")");

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		stackedCardsObj = obj.querySelector('.stackedcards-container');
 		listElNodesObj = stackedCardsObj.children;
 		
-		topObj = obj.querySelector('.stackedcards-overlay.top');
+		// topObj = obj.querySelector('.stackedcards-overlay.top');
 		rightObj = obj.querySelector('.stackedcards-overlay.right');
 		leftObj = obj.querySelector('.stackedcards-overlay.left');
 		
@@ -95,17 +95,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			rightObj.style.transform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
 			rightObj.style.webkitTransform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
 			
-			topObj.style.transform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
-			topObj.style.webkitTransform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
+			// topObj.style.transform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
+			// topObj.style.webkitTransform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
 			
 		} else {
 			leftObj.className = '';
 			rightObj.className = '';
-			topObj.className = '';
+			// topObj.className = '';
 			
 			leftObj.classList.add('stackedcards-overlay-hidden');
 			rightObj.classList.add('stackedcards-overlay-hidden');
-			topObj.classList.add('stackedcards-overlay-hidden');
+			// topObj.classList.add('stackedcards-overlay-hidden');
 		}
 		
 		//Remove class init
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if(useOverlays){
 				transformUi(0, 0, 0, leftObj);
 				transformUi(0, 0, 0, rightObj);
-				transformUi(0, 0, 0, topObj);
+				// transformUi(0, 0, 0, topObj);
 			}
 	
 			setZindex(5);
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if(!(currentPosition >= maxElements)){
 				if(useOverlays) {
 					leftObj.classList.remove('no-transition');
-					topObj.classList.remove('no-transition');
+					// topObj.classList.remove('no-transition');
 					leftObj.style.zIndex = '8';
 					transformUi(0, 0, 1, leftObj);
 	
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if(!(currentPosition >= maxElements)){
 				if(useOverlays) {
 					rightObj.classList.remove('no-transition');
-					topObj.classList.remove('no-transition');
+					// topObj.classList.remove('no-transition');
 					rightObj.style.zIndex = '8';
 					transformUi(0, 0, 1, rightObj);
 				}
@@ -184,22 +184,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		};
 		
 		//Functions to swipe top elements on logic external action.
-		function onActionTop() {
-			if(!(currentPosition >= maxElements)){
-				if(useOverlays) {
-					leftObj.classList.remove('no-transition');
-					rightObj.classList.remove('no-transition');
-					topObj.classList.remove('no-transition');
-					topObj.style.zIndex = '8';
-					transformUi(0, 0, 1, topObj);
-				}
+		// function onActionTop() {
+		// 	if(!(currentPosition >= maxElements)){
+		// 		if(useOverlays) {
+		// 			leftObj.classList.remove('no-transition');
+		// 			rightObj.classList.remove('no-transition');
+		// 			topObj.classList.remove('no-transition');
+		// 			topObj.style.zIndex = '8';
+		// 			transformUi(0, 0, 1, topObj);
+		// 		}
 				
-				setTimeout(function(){
-					onSwipeTop();
-					resetOverlays();
-				},300); //wait animations end
-			}
-		};
+		// 		setTimeout(function(){
+		// 			onSwipeTop();
+		// 			resetOverlays();
+		// 		},300); //wait animations end
+		// 	}
+		// };
 		
 		//Swipe active card to left.
 		function onSwipeLeft() {
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			transformUi(-1000, 0, 0, currentElementObj);
 			if(useOverlays){
 				transformUi(-1000, 0, 0, leftObj); //Move leftOverlay
-				transformUi(-1000, 0, 0, topObj); //Move topOverlay
+				// transformUi(-1000, 0, 0, topObj); //Move topOverlay
 				resetOverlayLeft();
 			}
 			currentPosition = currentPosition + 1;
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			transformUi(1000, 0, 0, currentElementObj);
 			if(useOverlays){
 				transformUi(1000, 0, 0, rightObj); //Move rightOverlay
-				transformUi(1000, 0, 0, topObj); //Move topOverlay
+				// transformUi(1000, 0, 0, topObj); //Move topOverlay
 				resetOverlayRight();
 			}
 	
@@ -237,24 +237,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		};
 		
-		//Swipe active card to top.
-		function onSwipeTop() {
-			removeNoTransition();
-			transformUi(0, -1000, 0, currentElementObj);
-			if(useOverlays){
-				transformUi(0, -1000, 0, leftObj); //Move leftOverlay
-				transformUi(0, -1000, 0, rightObj); //Move rightOverlay
-				transformUi(0, -1000, 0, topObj); //Move topOverlay
-				resetOverlays();
-			}
+		// //Swipe active card to top.
+		// function onSwipeTop() {
+		// 	removeNoTransition();
+		// 	transformUi(0, -1000, 0, currentElementObj);
+		// 	if(useOverlays){
+		// 		transformUi(0, -1000, 0, leftObj); //Move leftOverlay
+		// 		transformUi(0, -1000, 0, rightObj); //Move rightOverlay
+		// 		transformUi(0, -1000, 0, topObj); //Move topOverlay
+		// 		resetOverlays();
+		// 	}
 	
-			currentPosition = currentPosition + 1;
-			updateUi();
-			currentElement();
-			setActiveHidden();
-			changePage();
+		// 	currentPosition = currentPosition + 1;
+		// 	updateUi();
+		// 	currentElement();
+		// 	setActiveHidden();
+		// 	changePage();
 
-		};
+		// };
 		
 		//Remove transitions from all elements to be moved in each swipe movement to improve perfomance of stacked cards.
 		function removeNoTransition() {
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				if(useOverlays) {
 					leftObj.classList.remove('no-transition');
 					rightObj.classList.remove('no-transition');
-					topObj.classList.remove('no-transition');
+					// topObj.classList.remove('no-transition');
 				}
 				
 				listElNodesObj[currentPosition].classList.remove('no-transition');
@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						if(!isFirstTime){
 							
 							leftObj.classList.add('no-transition');
-							topObj.classList.add('no-transition');
+							// topObj.classList.add('no-transition');
 							
 						}
 						
@@ -301,9 +301,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							leftObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							leftObj.style.opacity = '0';
 							
-							topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							topObj.style.opacity = '0';
+							// topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
+							// topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
+							// topObj.style.opacity = '0';
 						
 						});
 						
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						if(!isFirstTime){
 							
 							rightObj.classList.add('no-transition');
-							topObj.classList.add('no-transition');
+							// topObj.classList.add('no-transition');
 							
 						}
 						
@@ -343,9 +343,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							rightObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							rightObj.style.opacity = '0';
 							
-							topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							topObj.style.opacity = '0';
+							// topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
+							// topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
+							// topObj.style.opacity = '0';
 						
 						});
 	
@@ -376,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 							leftObj.classList.add('no-transition');
 							rightObj.classList.add('no-transition');
-							topObj.classList.add('no-transition');
+							// topObj.classList.add('no-transition');
 	
 						}
 						
@@ -390,9 +390,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							rightObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							rightObj.style.opacity = '0';
 							
-							topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							topObj.style.opacity = '0';
+							// topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
+							// topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
+							// topObj.style.opacity = '0';
 	
 						});
 	
@@ -498,7 +498,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							if(useOverlays){
 								leftObj.classList.add('stackedcards-origin-top');
 								rightObj.classList.add('stackedcards-origin-top');
-								topObj.classList.add('stackedcards-origin-top'); 
+								// topObj.classList.add('stackedcards-origin-top'); 
 							}
 	
 							elTrans = elTransInc * elTransTop;
@@ -510,7 +510,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							if(useOverlays){
 								leftObj.classList.add('stackedcards-origin-bottom');
 								rightObj.classList.add('stackedcards-origin-bottom');
-								topObj.classList.add('stackedcards-origin-bottom');
+								// topObj.classList.add('stackedcards-origin-bottom');
 							}
 	
 							elTrans = elTrans + elTransInc;
@@ -554,14 +554,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 		function setOverlayOpacity() {
 	
-			topOpacity = (((translateY + (elementHeight) / 2) / 100) * -1);
+			// topOpacity = (((translateY + (elementHeight) / 2) / 100) * -1);
 			rightOpacity = translateX / 100;
 			leftOpacity = ((translateX / 100) * -1);
 			
 	
-			if(topOpacity > 1) {
-				topOpacity = 1;
-			}
+			// if(topOpacity > 1) {
+			// 	topOpacity = 1;
+			// }
 	
 			if(rightOpacity > 1) {
 				rightOpacity = 1;
@@ -592,7 +592,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					if(useOverlays){
 						leftObj.classList.add('no-transition');
 						rightObj.classList.add('no-transition');
-						topObj.classList.add('no-transition');
+						// topObj.classList.add('no-transition');
 					}
 					
 					if((currentPosition + 1) < maxElements){
@@ -620,7 +620,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				transformUi(translateX, translateY, 1, currentElementObj);
 	
 				if(useOverlays){
-					transformUi(translateX, translateY, topOpacity, topObj);
+					// transformUi(translateX, translateY, topOpacity, topObj);
 	
 					if(translateX < 0){
 						transformUi(translateX, translateY, leftOpacity, leftObj);
@@ -634,7 +634,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					if(useOverlays){
 						leftObj.style.zIndex = 8;
 						rightObj.style.zIndex = 8;
-						topObj.style.zIndex = 7;
+						// topObj.style.zIndex = 7;
 					}
 	
 				}
@@ -657,16 +657,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			touchingElement = false;
 			
 			if(!(currentPosition >= maxElements)){
-				if(translateY < (elementHeight * -1) && translateX > ((listElNodesWidth / 2) * -1) && translateX < (listElNodesWidth / 2)){  //is Top?
+				// if(translateY < (elementHeight * -1) && translateX > ((listElNodesWidth / 2) * -1) && translateX < (listElNodesWidth / 2)){  //is Top?
 	
-					if(translateY < (elementHeight * -1) || (Math.abs(translateY) / timeTaken > velocity)){ // Did It Move To Top?
-						onSwipeTop();
-					} else {
-						backToMiddle();
-					}
+				// 	if(translateY < (elementHeight * -1) || (Math.abs(translateY) / timeTaken > velocity)){ // Did It Move To Top?
+				// 		onSwipeTop();
+				// 	} else {
+				// 		backToMiddle();
+				// 	}
 	
-				} else {
-	
+				// } else {
+				if(!(translateY < (elementHeight * -1) && translateX > ((listElNodesWidth / 2) * -1) && translateX < (listElNodesWidth / 2))){
 					if(translateX < 0){
 						if(translateX < ((listElNodesWidth / 2) * -1) || (Math.abs(translateX) / timeTaken > velocity)){ // Did It Move To Left?
 							onSwipeLeft();
@@ -692,11 +692,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		//Add listeners to call global action for swipe cards
 		var buttonLeft = document.querySelector('.left-action');
-		var buttonTop = document.querySelector('.top-action');
+		// var buttonTop = document.querySelector('.top-action');
 		var buttonRight = document.querySelector('.right-action');
 
 		buttonLeft.addEventListener('click', onActionLeft, false);
-		buttonTop.addEventListener('click', onActionTop, false);
+		// buttonTop.addEventListener('click', onActionTop, false);
 		buttonRight.addEventListener('click', onActionRight, false);
 
 	}
@@ -713,66 +713,119 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log(document.getElementsByClassName('stackedcards-container'));
 		var container = document.getElementsByClassName('stackedcards-container')[0];
 		for (business of data) {
+			// create card item
 			var cardItem = document.createElement('div');
 			cardItem.className = 'card-item';
 
+			// add splash image to left of card item
 			let image = document.createElement('img');
 			image.src = business.image_url;
-			image.className = 'display-img';
+			image.className = 'img-display';
 
+			// add text div to right of card item
 			let textInfo = document.createElement('div');
 			textInfo.className = 'text-display';
 			let title = document.createElement('h1');
 			title.innerHTML = business.name;
 
-			var dir = "images/yelp_stars/web_and_ios/regular/regular_";
-			var imgSrc;
-			switch (business.rating) {
-				case 0:
-					imgSrc = dir.concat("0.png");
-					break;
-				case 1:
-					imgSrc = dir.concat("1.png");
-					break;
-				case 1.5:
-					imgSrc = dir.concat("1_half.png");
-					break;
-				case 2:
-					imgSrc = dir.concat("2.png");
-					break;
-				case 2.5:
-					imgSrc = dir.concat("2_half.png");
-					break;
-				case 3:
-					imgSrc = dir.concat("3.png");
-					break;
-				case 3.5:
-					imgSrc = dir.concat("3_half.png");
-					break;
-				case 4:
-					imgSrc = dir.concat("4.png");
-					break;
-				case 4.5:
-					imgSrc = dir.concat("4_half.png");
-					break;
-				case 5:
-					imgSrc = dir.concat("5.png");
-					break;
-				default:
-					console.log("error");
-			}
-			let rating = document.createElement('img');
-			rating.src = imgSrc;
+			var rating = document.createElement('img');
+			rating.src = getRating(rating);
+			rating.className = 'display-inline'
+
+			let reviewCount = document.createElement('p');
+			reviewCount.innerHTML = business.review_count.toString().concat(' reviews');
+			reviewCount.className = 'display-inline review-count-display vertical-pad';
+
+			// create line of description with categories and price
+			let description = document.createElement('div');
+			description.className = 'vertical-pad';
+			let categoryDisplay = document.createElement('p');
+			categoryDisplay.innerHTML = getCategoriesStr(business.categories);
+			categoryDisplay.className = 'display-inline';
+
+			let bullet = document.createElement('div');
+			bullet.innerHTML = "&#8226";
+			bullet.className = 'bullet display-inline';
+
+			let price = document.createElement('p');
+			price.innerHTML = business.price;
+			price.className = 'display-inline';
+
+			description.appendChild(categoryDisplay);
+			description.appendChild(bullet);
+			description.appendChild(price);
+
+			// create line of distance information
+			let distance = document.createElement('div');
+			distance.innerHTML = convertMetersToMiles(business.distance).toString().concat(" miles");
 
 
+			// Add all elements to the right text info
 			textInfo.appendChild(title);
 			textInfo.appendChild(rating);
+			textInfo.appendChild(reviewCount);
+			textInfo.appendChild(description);
+			textInfo.appendChild(distance)
 
+			// Add image and text info to card
 			cardItem.appendChild(image);
 			cardItem.appendChild(textInfo);
 
 			container.appendChild(cardItem);
 		}
+	}
+
+	function getCategoriesStr(categories) {
+		var categoryTitles = [];
+		for (category of categories) {
+			categoryTitles.push(category.title);
+		}
+		return categoryTitles.join(", ");
+	}
+
+	function getRating(rating) {
+		let dir = "images/yelp_stars/web_and_ios/regular/regular_";
+		let imgSrc;
+		switch (business.rating) {
+			case 0:
+				imgSrc = dir.concat("0.png");
+				break;
+			case 1:
+				imgSrc = dir.concat("1.png");
+				break;
+			case 1.5:
+				imgSrc = dir.concat("1_half.png");
+				break;
+			case 2:
+				imgSrc = dir.concat("2.png");
+				break;
+			case 2.5:
+				imgSrc = dir.concat("2_half.png");
+				break;
+			case 3:
+				imgSrc = dir.concat("3.png");
+				break;
+			case 3.5:
+				imgSrc = dir.concat("3_half.png");
+				break;
+			case 4:
+				imgSrc = dir.concat("4.png");
+				break;
+			case 4.5:
+				imgSrc = dir.concat("4_half.png");
+				break;
+			case 5:
+				imgSrc = dir.concat("5.png");
+				break;
+			default:
+				console.log("error");
+		}
+		return imgSrc;
+	}
+
+	function convertMetersToMiles(meters) {
+		var miles = meters / 1609.34;
+		return Math.round(miles * 10) / 10
 	}
 
 	stackedCards();
