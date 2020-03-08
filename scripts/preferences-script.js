@@ -287,7 +287,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		// Template for api call from ->
 		// Source: https://stackoverflow.com/questions/53357891/how-do-i-resolve-the-cors-error-in-yelp-api-call
-		
+		var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
+		var apiKey = "7daTtSKXtyMB-3mUKRv15p_B4i3tRREYThFBdyATpSBkR5ceC5p-PbOuvNq5JVYgkA8EVmFi9VfShs7V5m0QD23kiwrMEWvBsb6nl_XtGT5SBCzY4NYoWEkC4yNZXnYx"; 
 		setTimeout(function() {
 			if (!onExit) {
 				$.ajax({

@@ -94,18 +94,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
 			rightObj.style.transform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
 			rightObj.style.webkitTransform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
-			
-			// topObj.style.transform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
-			// topObj.style.webkitTransform = 'translateX(0px) translateY(' + elTrans + 'px) translateZ(0px) rotate(0deg)';
-			
+						
 		} else {
 			leftObj.className = '';
 			rightObj.className = '';
-			// topObj.className = '';
 			
 			leftObj.classList.add('stackedcards-overlay-hidden');
 			rightObj.classList.add('stackedcards-overlay-hidden');
-			// topObj.classList.add('stackedcards-overlay-hidden');
 		}
 		
 		//Remove class init
@@ -122,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if(useOverlays){
 				transformUi(0, 0, 0, leftObj);
 				transformUi(0, 0, 0, rightObj);
-				// transformUi(0, 0, 0, topObj);
 			}
 	
 			setZindex(5);
@@ -153,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if(!(currentPosition >= maxElements)){
 				if(useOverlays) {
 					leftObj.classList.remove('no-transition');
-					// topObj.classList.remove('no-transition');
 					leftObj.style.zIndex = '8';
 					transformUi(0, 0, 1, leftObj);
 	
@@ -171,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if(!(currentPosition >= maxElements)){
 				if(useOverlays) {
 					rightObj.classList.remove('no-transition');
-					// topObj.classList.remove('no-transition');
 					rightObj.style.zIndex = '8';
 					transformUi(0, 0, 1, rightObj);
 				}
@@ -183,31 +175,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		};
 		
-		//Functions to swipe top elements on logic external action.
-		// function onActionTop() {
-		// 	if(!(currentPosition >= maxElements)){
-		// 		if(useOverlays) {
-		// 			leftObj.classList.remove('no-transition');
-		// 			rightObj.classList.remove('no-transition');
-		// 			topObj.classList.remove('no-transition');
-		// 			topObj.style.zIndex = '8';
-		// 			transformUi(0, 0, 1, topObj);
-		// 		}
-				
-		// 		setTimeout(function(){
-		// 			onSwipeTop();
-		// 			resetOverlays();
-		// 		},300); //wait animations end
-		// 	}
-		// };
-		
 		//Swipe active card to left.
 		function onSwipeLeft() {
 			removeNoTransition();
 			transformUi(-1000, 0, 0, currentElementObj);
 			if(useOverlays){
 				transformUi(-1000, 0, 0, leftObj); //Move leftOverlay
-				// transformUi(-1000, 0, 0, topObj); //Move topOverlay
 				resetOverlayLeft();
 			}
 			currentPosition = currentPosition + 1;
@@ -225,7 +198,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			transformUi(1000, 0, 0, currentElementObj);
 			if(useOverlays){
 				transformUi(1000, 0, 0, rightObj); //Move rightOverlay
-				// transformUi(1000, 0, 0, topObj); //Move topOverlay
 				resetOverlayRight();
 			}
 	
@@ -237,25 +209,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		};
 		
-		// //Swipe active card to top.
-		// function onSwipeTop() {
-		// 	removeNoTransition();
-		// 	transformUi(0, -1000, 0, currentElementObj);
-		// 	if(useOverlays){
-		// 		transformUi(0, -1000, 0, leftObj); //Move leftOverlay
-		// 		transformUi(0, -1000, 0, rightObj); //Move rightOverlay
-		// 		transformUi(0, -1000, 0, topObj); //Move topOverlay
-		// 		resetOverlays();
-		// 	}
-	
-		// 	currentPosition = currentPosition + 1;
-		// 	updateUi();
-		// 	currentElement();
-		// 	setActiveHidden();
-		// 	changePage();
-
-		// };
-		
 		//Remove transitions from all elements to be moved in each swipe movement to improve perfomance of stacked cards.
 		function removeNoTransition() {
 			if(listElNodesObj[currentPosition]){
@@ -263,7 +216,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				if(useOverlays) {
 					leftObj.classList.remove('no-transition');
 					rightObj.classList.remove('no-transition');
-					// topObj.classList.remove('no-transition');
 				}
 				
 				listElNodesObj[currentPosition].classList.remove('no-transition');
@@ -291,7 +243,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						if(!isFirstTime){
 							
 							leftObj.classList.add('no-transition');
-							// topObj.classList.add('no-transition');
 							
 						}
 						
@@ -300,10 +251,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							leftObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							leftObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							leftObj.style.opacity = '0';
-							
-							// topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							// topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							// topObj.style.opacity = '0';
 						
 						});
 						
@@ -333,7 +280,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						if(!isFirstTime){
 							
 							rightObj.classList.add('no-transition');
-							// topObj.classList.add('no-transition');
 							
 						}
 						
@@ -342,10 +288,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							rightObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							rightObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							rightObj.style.opacity = '0';
-							
-							// topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							// topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							// topObj.style.opacity = '0';
 						
 						});
 	
@@ -389,11 +331,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							rightObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							rightObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
 							rightObj.style.opacity = '0';
-							
-							// topObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							// topObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
-							// topObj.style.opacity = '0';
-	
+
 						});
 	
 					},300);	// wait for animations time
@@ -498,7 +436,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							if(useOverlays){
 								leftObj.classList.add('stackedcards-origin-top');
 								rightObj.classList.add('stackedcards-origin-top');
-								// topObj.classList.add('stackedcards-origin-top'); 
 							}
 	
 							elTrans = elTransInc * elTransTop;
@@ -510,7 +447,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							if(useOverlays){
 								leftObj.classList.add('stackedcards-origin-bottom');
 								rightObj.classList.add('stackedcards-origin-bottom');
-								// topObj.classList.add('stackedcards-origin-bottom');
 							}
 	
 							elTrans = elTrans + elTransInc;
@@ -554,14 +490,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 		function setOverlayOpacity() {
 	
-			// topOpacity = (((translateY + (elementHeight) / 2) / 100) * -1);
 			rightOpacity = translateX / 100;
 			leftOpacity = ((translateX / 100) * -1);
-			
-	
-			// if(topOpacity > 1) {
-			// 	topOpacity = 1;
-			// }
+
 	
 			if(rightOpacity > 1) {
 				rightOpacity = 1;
@@ -592,7 +523,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					if(useOverlays){
 						leftObj.classList.add('no-transition');
 						rightObj.classList.add('no-transition');
-						// topObj.classList.add('no-transition');
 					}
 					
 					if((currentPosition + 1) < maxElements){
@@ -620,7 +550,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				transformUi(translateX, translateY, 1, currentElementObj);
 	
 				if(useOverlays){
-					// transformUi(translateX, translateY, topOpacity, topObj);
 	
 					if(translateX < 0){
 						transformUi(translateX, translateY, leftOpacity, leftObj);
@@ -634,7 +563,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					if(useOverlays){
 						leftObj.style.zIndex = 8;
 						rightObj.style.zIndex = 8;
-						// topObj.style.zIndex = 7;
 					}
 	
 				}
@@ -657,15 +585,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			touchingElement = false;
 			
 			if(!(currentPosition >= maxElements)){
-				// if(translateY < (elementHeight * -1) && translateX > ((listElNodesWidth / 2) * -1) && translateX < (listElNodesWidth / 2)){  //is Top?
-	
-				// 	if(translateY < (elementHeight * -1) || (Math.abs(translateY) / timeTaken > velocity)){ // Did It Move To Top?
-				// 		onSwipeTop();
-				// 	} else {
-				// 		backToMiddle();
-				// 	}
-	
-				// } else {
 				if(!(translateY < (elementHeight * -1) && translateX > ((listElNodesWidth / 2) * -1) && translateX < (listElNodesWidth / 2))){
 					if(translateX < 0){
 						if(translateX < ((listElNodesWidth / 2) * -1) || (Math.abs(translateX) / timeTaken > velocity)){ // Did It Move To Left?
@@ -692,11 +611,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		//Add listeners to call global action for swipe cards
 		var buttonLeft = document.querySelector('.left-action');
-		// var buttonTop = document.querySelector('.top-action');
 		var buttonRight = document.querySelector('.right-action');
 
 		buttonLeft.addEventListener('click', onActionLeft, false);
-		// buttonTop.addEventListener('click', onActionTop, false);
 		buttonRight.addEventListener('click', onActionRight, false);
 
 	}

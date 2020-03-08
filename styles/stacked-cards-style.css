@@ -9,10 +9,11 @@
 
 .review-count-display {
     margin: 10px;
+    width: auto;
+    height: auto;
     position: relative;
     font-weight: 400;
     font-size: 12px;
-    top: -4px;
 }
 
 .text-display {
@@ -45,7 +46,7 @@ h1 {
 
 
 /* 
-Remainder of file written by - 
+Remainder of file written by (with some adaptations) - 
 vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 
 /* Stacked Cards component css */
@@ -53,13 +54,11 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
   font-family: 'Roboto';
   overflow-x: hidden;
   font-size: 12px;
-/*  padding: 10%;
-*/  /*margin: 0 auto; 
-    display: inline-block;*/
+  padding-top: 8%;
 }
 
 .stacked-cards-block {
-    margin: 0 auto;
+    position: relative;
 }
 
 .no-transition {
@@ -77,6 +76,7 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 }
 
 .stackedcards {
+
     position: relative;
     
 }
@@ -97,16 +97,27 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 .stackedcards .stackedcards-container > *,
 .stackedcards-overlay {
     position: absolute;
+    right: 0 !important;
+    left: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     width: 800px; /* set 100% */
-    height: 500px; /* set 100% */
+    height: 400px; /* set 100% */
     will-change: transform, opacity;
     top: 0;
     border-radius: 10px;
 }
 
+.left, 
+.right {
+    color: white;
+    font-size: 200px; 
+    text-align: center; 
+    line-height: 500px;
+}
+
 .stackedcards-overlay.left > div,
-.stackedcards-overlay.right > div,
-.stackedcards-overlay.top > div {
+.stackedcards-overlay.right > div {
     width: 100%;
     height: 100%;
     -webkit-box-align: center;
@@ -121,8 +132,7 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 }
 
 .stackedcards-overlay.left,
-.stackedcards-overlay.right,
-.stackedcards-overlay.top {
+.stackedcards-overlay.right {   
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -136,14 +146,10 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
     opacity: 0;
     top: 0;
     height: 100%;
-    font-size: 24px; /* this style was added only for better preview */
+    font-size: 100px;  /*this style was added only for better preview*/
     text-transform: uppercase; /* this style was added only for better preview */
     font-weight: 500; /* this style was added only for better preview */
     color: #fff; /* this style was added only for better preview */
-}
-
-.stackedcards-overlay.top {
-    background: #E38568;
 }
 
 .stackedcards-overlay.right {
@@ -155,8 +161,7 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 }
 
 .stackedcards-overlay.left:empty,
-.stackedcards-overlay.right:empty,
-.stackedcards-overlay.top:empty {
+.stackedcards-overlay.right:empty {
   display: none !important;
 }
 
@@ -190,19 +195,25 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 
 /* global actions buttons*/
 .global-actions {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    width: 100%;
     margin-top: 10px;
 }
 
-.top-action,
 .right-action,
 .left-action {
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
+    margin: 0 0;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    text-align:center; 
+    line-height: 60px !important;
+
+    border-radius: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -217,13 +228,17 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
     color: #fff;
 }
 
-.top-action {
-    background: #E38568;
-    margin: 0 10px; 
+.action-button {
+    padding: 5px;
 }
 
-.right-action { background: #7BB3C5; }
-.left-action { background: #E58D93; }
+.right-action { 
+    background: #7BB3C5; 
+}
+
+.left-action { 
+    background: #E58D93; 
+}
 
 
 /* ^^^ Credit: https://codepen.io/bmarcelino/pen/vRYPXV ^^^ */
