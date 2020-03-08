@@ -167,7 +167,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	var longitude;
 	var latitude;
-	getLocation();
+	var timeout = 100;
+	setTimeout(function() {
+		getLocation();
+	});
+
 	// Source: https://www.w3schools.com/html/html5_geolocation.asp
 	// Get the location of a user
 	function getLocation() {
@@ -179,19 +183,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	function setPosition(position) {
 	 	latitude = position.coords.latitude; 
 	 	longitude = position.coords.longitude;
-	 	console.log(latitude);
-	 	console.log(longitude);	 	
 	}
 
 	// Add all categories to be an option as a searchable category
 	var categoriesDatalist = document.getElementById("categories-datalist");
 	for (var categoryTitle in categoryDict) {
-		console.log(categoryTitle)
 		var newCategory = document.createElement("option")
 		newCategory.setAttribute("value", categoryTitle);
 		categoriesDatalist.appendChild(newCategory);
 	}
 
+	// Button for prefs 
 	document.getElementById("finish-prefs-button").addEventListener("click", function() {
 		// Get the selected category string 
 		var categoryStr;
@@ -228,7 +230,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log(latitude);
 
 		// Handle blank fields
-		var timeout = 100;
 		var onExit = false;
 		setTimeout(function() {
 			if (typeof(longitude) == "undefined" || typeof(latitude) == "undefined") {
@@ -291,19 +292,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 	});
 });
-
-var visited=something;
-
-function doStuff() {
-    if(something===something_cachedValue) {//we want it to match
-        setTimeout(doStuff, 50);//wait 50 millisecnds then recheck
-        return;
-    }
-    something_cachedValue=something;
-    //real action
-}
-
-doStuff();
 
 // Function adds a given category to the frontend
 function addDisplayCategory(category) {

@@ -1,49 +1,60 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     var selections = JSON.parse(sessionStorage.selections);
-    console.log(selections);
-
     var selectionContainer = document.getElementById('results-container');
+
     displaySelections();
     displayMap();
-    // inspired from https://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example
+
+    // documentation from https://developers.google.com/maps/documentation/javascript/markers#marker_labels
     function displayMap() {
     	var locations = [];
-    	var counter = 1;
     	for (business of selections) {
-    		locations.push([business.name, parseFloat(business.coordinates.latitude), parseFloat(business.coordinates.longitude), counter]);
-    		counter++;
+    		locations.push([business.name, parseFloat(business.coordinates.latitude), parseFloat(business.coordinates.longitude)]);
     	}
 
+    	// create map
 	    var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 10,
-	      center: new google.maps.LatLng(sessionStorage.latitude, sessionStorage.longitude),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
+			zoom: 12,
+			center: new google.maps.LatLng(sessionStorage.latitude, sessionStorage.longitude),
 	    });
 
-	    var infowindow = new google.maps.InfoWindow();
+	    // add user's location to map
+	    var userMarker = new google.maps.Marker({
+			position: new google.maps.LatLng(sessionStorage.latitude, sessionStorage.longitude),
+			map: map,
+		});
+		userMarker.addListener('click', function() {
+			infowindow.open(map, marker);
+		});
 
-	    var marker, i;
-
+		// add restaurant markers to map
 	    for (i = 0; i < locations.length; i++) {  
-	      marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-	        map: map
-	      });
+			let marker = new google.maps.Marker({
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				label: (i+1).toString(),
+				map: map
+			});
 
-	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	        return function() {
-	          infowindow.setContent(locations[i][0]);
-	          infowindow.open(map, marker);
-	        }
-	      })(marker, i));
+			// Scrolling from https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click/18071231
+			marker.addListener('click', (function(marker, i) {
+				return function() {
+					var id = '#'.concat((i+1).toString());
+				    $('html,body').animate({
+				        scrollTop: $(id).offset().top},
+				        'slow');
+				}
+			})(marker, i));
 	    }
+
     }
 
-
+    // Create displays for selections
     function displaySelections() {
+    	var idx = 1;
     	for (selection of selections) {
     		let display = document.createElement('div');
     		display.className = 'display-block final-result-block';
+    		display.id = idx.toString();
 
     		// add thumbnail image
     		let image = document.createElement('img');
@@ -54,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			textDisplay.className = 'display-inline text-left text-display smaller-text-display';
 
 			// add title
-			let title = document.createElement('h3');
-			title.innerHTML = selection.name;
+			let title = document.createElement('h2');
+			title.innerHTML = (idx.toString()).concat(". ").concat(selection.name);
 
 			// add review/rating information
 			let rating = document.createElement('img');
@@ -105,11 +116,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			display.appendChild(image);
 			display.appendChild(textDisplay);
 	    	selectionContainer.appendChild(display);
+
+	    	idx++;
     	}
     }
 
+    // 
 	document.getElementById("repeat-button").addEventListener("click", function() {
-		console.log("hello?");
 		document.location.href = "preferences.html";
 	});
 

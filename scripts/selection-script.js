@@ -1,6 +1,8 @@
 /* 
 Adapted variation of:
 Source Credit: https://codepen.io/bmarcelino/pen/vRYPXV 
+
+Original code from line 628 on
 */
 
 // JavaScript Document
@@ -622,15 +624,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		buttonRight.addEventListener('click', onActionRight, false);
 
 	}
-	
+
+/***Written code******/
+	// fetch results from preferences
 	if (sessionStorage.results) {
 		var data = JSON.parse(sessionStorage.results);
 		console.log(data);
 		createCards(data.businesses);
 	} else {
-		console.log("fail");
+		console.log("Could not retrieve data");
 	}
 
+	// create cards for each business
 	function createCards(data) {
 		console.log(document.getElementsByClassName('stackedcards-container'));
 		var container = document.getElementsByClassName('stackedcards-container')[0];
@@ -698,6 +703,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	}
 
+	// given an list of category info, get the string of categories
 	function getCategoriesStr(categories) {
 		var categoryTitles = [];
 		for (category of categories) {
@@ -706,6 +712,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		return categoryTitles.join(", ");
 	}
 
+	// return the appropriate yelp picture rating for a given rating
+	// Yelp images from https://www.yelp.com/developers/display_requirements
 	function getRating(rating) {
 		let dir = "images/yelp_stars/web_and_ios/regular/regular_";
 		let imgSrc;
@@ -746,11 +754,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		return imgSrc;
 	}
 
+	// function to convert meters to miles
 	function convertMetersToMiles(meters) {
 		var miles = meters / 1609.34;
-		return Math.round(miles * 10) / 10
+		return Math.round(miles * 10) / 10;
 	}
 
 	stackedCards();
-	
+
 });
