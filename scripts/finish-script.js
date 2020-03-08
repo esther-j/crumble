@@ -71,6 +71,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     	}
     }
 
+	document.getElementById("repeat-button").addEventListener("click", function() {
+		console.log("hello?");
+		document.location.href = "preferences.html";
+	});
 
 	function getCategoriesStr(categories) {
 		var categoryTitles = [];
