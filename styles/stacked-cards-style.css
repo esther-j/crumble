@@ -153,11 +153,11 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 }
 
 .stackedcards-overlay.right {
-    background: #7BB3C5;
+    background: #FF7A00;
 }
 
 .stackedcards-overlay.left {
-    background: #E58D93;
+    background: grey;
 }
 
 .stackedcards-overlay.left:empty,
@@ -226,19 +226,41 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
     text-transform: uppercase;
     font-weight: 500;
     color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
 }
 
-.action-button {
+/* ^^^ Credit: https://codepen.io/bmarcelino/pen/vRYPXV ^^^ */
+ /****************************/
+ .action-button {
     padding: 5px;
 }
 
 .right-action { 
-    background: #7BB3C5; 
+    border-style: solid;
+    border-color: #FF7A00;
+    color: #FF7A00;
+    background: white;
 }
 
 .left-action { 
-    background: #E58D93; 
+    border-style: solid;
+    border-color: grey;
+    color: grey;
+    background: white;
 }
 
+.right-action:hover {
+    background: #FF7A00;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 8px 22px 0 rgba(0,0,0,0.19);
 
-/* ^^^ Credit: https://codepen.io/bmarcelino/pen/vRYPXV ^^^ */
+}
+
+.left-action:hover {
+    background: grey;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 8px 22px 0 rgba(0,0,0,0.19);
+}
+
