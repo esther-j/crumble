@@ -4,16 +4,16 @@ h1, h2, h3 {
     margin: 0;
 }
 
-.preload * {
-	-webkit-transition: none !important;
-	-moz-transition: none !important;
-	-ms-transition: none !important;
-	-o-transition: none !important;
+p {
+    font-weight: 400;
 }
 
 .middle {
  	margin: 0 auto;
-	transform: translate(0%, 5%);
+}
+
+.shift-down {
+    transform: translate(0%, 5%);
 }
 
 .text-left {
@@ -45,7 +45,7 @@ h1, h2, h3 {
 
 .standard-button {
     background-color: #F95A00; /* Light orange */
-    font-weight: 100;
+    font-weight: 200;
     border: none;
     color: white;
     padding: 10px 50px;
@@ -61,6 +61,50 @@ h1, h2, h3 {
 .standard-button:hover {
     cursor: pointer;
     box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 8px 22px 0 rgba(0,0,0,0.19);
+}
+
+/********************************** Navigation CSS **********************************/
+* {
+  margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FF7A00; /* Orange */
+
+}
+
+li a {
+    font-family: 'Roboto';
+    font-weight: 900;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 40%;
+}
+
+#main-label {
+    margin-left: 50px;
+    font-size: 30px;
+    float: left;
+}
+
+#about-label {
+    margin-right: 50px;
+    float: right;
+    padding-top: 8px;
 }
 
 /********************************** Main page CSS **********************************/
@@ -101,6 +145,7 @@ h1, h2, h3 {
     padding: 40px;
   	margin-top: 30px;
   	margin-bottom: 30px;
+    font-family: 'Roboto';
 }
 
 .info-title {
@@ -110,7 +155,7 @@ h1, h2, h3 {
 .category-display {
     cursor: pointer;
     font-family: 'Roboto';
-    font-weight: lighter;
+    font-weight: 400;
     background-color: grey;
     border: none;
     color: white;
@@ -229,7 +274,7 @@ input.category-input[type="radio"]:checked ~ div{
 }
 
 .vertical-pad {
-    padding: 5% 0;
+    padding: 2% 0;
 }
 
 .bullet {
@@ -256,18 +301,18 @@ input.category-input[type="radio"]:checked ~ div{
 
 .smaller-review-count-display {
     font-size: 10px;
-  vertical-align: text-top;
+    vertical-align: text-top;
     margin: 0 5%;
 }
 
 .smaller-text-display {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 #map {
     width: 100%; 
     height: 400px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 

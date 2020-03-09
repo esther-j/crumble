@@ -6,12 +6,6 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 #selection-body {
   font-family: 'Roboto';
   overflow-x: hidden;
-  font-size: 12px;
-  padding-top: 8%;
-}
-
-.stacked-cards-block {
-    position: relative;
 }
 
 .no-transition {
@@ -29,7 +23,6 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 }
 
 .stackedcards {
-
     position: relative;
     
 }
@@ -183,9 +176,22 @@ vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv */
 }
 
 /* ^^^ Credit: https://codepen.io/bmarcelino/pen/vRYPXV ^^^ */
- /****************************/
- .action-button {
-    padding: 5px;
+
+ /*Personal code***************************/
+main {
+    padding-top: 80px;
+}
+
+.action-button {
+    padding-top: 10%;
+}
+
+.right-button {
+    margin-left: 5%;
+}
+
+.left-button {
+    margin-right: 5%;
 }
 
 .right-action { 

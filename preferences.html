@@ -4,55 +4,67 @@
     <title>Crumble - Preferences</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,600,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/range-slider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
     <script src="scripts/preferences-script.js"></script>
+    <script src="scripts/range-script.js"></script>
   </head>
 
-  <body class="preload">
-    <div class="middle display-block standard-block text-left">
-      <h1>What are you looking for?</h1>
-      <div class="info-block" class="display-inline">
-      	<h3 class="info-title display-inline">Category</h3> 
-          <div id="categories-search" class="inline-block">
-            <input id="categories-custom-input" list="categories-datalist" name="category" placeholder="Search category">
-            <datalist id="categories-datalist"></datalist>
+  <body>
+    <header>
+      <ul>
+        <li id="main-label"><a href="index.html">crumble</a></li>
+        <li id="about-label"><a href="about.html">About</a></li>
+      </ul>
+    </header>
+    <main>
+      <div class="middle shift-down display-block standard-block text-left">
+        <h1>What are you looking for?</h1>
+        <div class="info-block" class="display-inline">
+        	<h3 class="info-title display-inline">Category</h3> 
+            <div id="categories-search" class="inline-block">
+              <input id="categories-custom-input" list="categories-datalist" name="category" placeholder="Search category">
+              <datalist id="categories-datalist"></datalist>
+            </div>
+            <div id="categories-container"></div>
+        </div>
+        <div class="info-block">
+        	<h3 class="info-title display-inline">Distance</h3>
+          <input id="range-slider" type="range" min="1" max="5" step="1">
+        </div>
+        <div class="info-block">
+          <h3 class="info-title display-inline">Price point</h3>
+          <div id="prices-container" class="display-inline">
+            <label for="1">
+              <input class="price-input" type="radio" id="1" name="prices">
+              <h3 class="display-inline price unselected-price">under $10</h3>
+            </label>
+            <label for="2">
+              <input class="price-input" type="radio" id="2" name="prices">
+              <h3 class="display-inline price unselected-price">$11-$30</h3>
+            </label>
+            <label for="3">
+              <input class="price-input" type="radio" id="3" name="prices">
+              <h3 class="display-inline price unselected-price">$31-$60</h3>
+            </label>
+            <label for="4">
+              <input class="price-input" type="radio" id="4" name="prices">
+              <h3 class="display-inline price unselected-price">over $61</h3>
+            </label>
           </div>
-          <div id="categories-container"></div>
-      </div>
-      <div class="info-block">
-      	<h3 class="info-title display-inline">Distance</h3>
-      	<input id="range-slider" class="display-inline" type="range" min="0" max="4" style="width: 80%">
-      </div>
-      <div class="info-block">
-        <h3 class="info-title display-inline">Price point</h3>
-        <div id="prices-container" class="display-inline">
-          <label for="1">
-            <input class="price-input" type="radio" id="1" name="prices">
-            <h3 class="display-inline price unselected-price">under $10</h3>
-          </label>
-          <label for="2">
-            <input class="price-input" type="radio" id="2" name="prices">
-            <h3 class="display-inline price unselected-price">$11-$30</h3>
-          </label>
-          <label for="3">
-            <input class="price-input" type="radio" id="3" name="prices">
-            <h3 class="display-inline price unselected-price">$31-$60</h3>
-          </label>
-          <label for="4">
-            <input class="price-input" type="radio" id="4" name="prices">
-            <h3 class="display-inline price unselected-price">over $61</h3>
-          </label>
+        </div>
+        <div class="info-block">
+        	<h3 class="info-title display-inline">Must be open now?</h3>
+          <input id="open-checkbox" class="display-inline" type="checkbox">
+        </div>
+        <div class="standard-button" id="finish-prefs-button">
+          <h3>show me my matches</h3>
         </div>
       </div>
-      <div class="info-block">
-      	<h3 class="info-title display-inline">Must be open now?</h3>
-        <input id="open-checkbox" class="display-inline" type="checkbox">
-      </div>
-      <div class="standard-button" id="finish-prefs-button">
-        <h3>show me my matches</h3>
-      </div>
-    </div>
+    </main>
   </body>
 </html>

@@ -1,0 +1,57 @@
+/*Code from https://codepen.io/andreruffert/pen/yyEVrE*/
+.rangeslider__ruler {
+  cursor: pointer;
+  font-size: .7em;
+  margin: 20px 3px 0 3px;
+  position: relative;
+  top: 100%;
+  text-align: justify;
+}
+
+/*// Workaround to justify only one-line.
+// Extra element to force a new line.*/
+.rangeslider__ruler:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+/*Remainder are personal edits to make the slider fit preference page*/
+.rangeslider__fill {
+  background: #FF7A00; /* Orange */
+}
+
+.rangeslider, input[type='range'] {
+  max-width: 100%;
+}
+
+.rangeslider__handle {
+  top: 0 !important;
+  width: 15px;
+  height: 15px;
+}
+
+.rangeslider__handle:after{
+  width: 5px;
+  height: 5px;
+}
+
+.rangeslider--horizontal {
+  margin-top: 10px;
+  height: 15px;
+}
+
+.rangeslider__ruler {
+  padding-top: 10px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+  opacity: 40%
+}
+
+.rangeslider, .rangeslider__fill {
+  display: inline-block;
+}
+
+

@@ -163,7 +163,7 @@ var dispCategoryList = new Set();
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function(event) {
-	document.getElementById("range-slider").value = "2";
+	// document.getElementById("range-slider").value = "2";
 
 	var longitude;
 	var latitude;
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		console.log(priceStr);
 		console.log(categoryStr);
-		console.log(distance);
+		console.log("distance");
 		console.log(isOpen);
 		console.log(longitude);
 		console.log(latitude);

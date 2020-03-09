@@ -23,8 +23,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			position: new google.maps.LatLng(sessionStorage.latitude, sessionStorage.longitude),
 			map: map,
 		});
+
+		// info window documentation: https://developers.google.com/maps/documentation/javascript/infowindows
+		var infowindow = new google.maps.InfoWindow({
+        	content: "Your location"
+        });
+
 		userMarker.addListener('click', function() {
-			infowindow.open(map, marker);
+			infowindow.open(map, userMarker);
 		});
 
 		// add restaurant markers to map
@@ -67,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			// add title
 			let title = document.createElement('h2');
 			title.innerHTML = (idx.toString()).concat(". ").concat(selection.name);
+			title.className = 'vertical-pad';
 
 			// add review/rating information
 			let rating = document.createElement('img');
@@ -100,17 +107,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			address.innerHTML = selection.location.display_address.join("\n");
 
 			// add website
+			let linkBlock = document.createElement('div');
 			let link = document.createElement('a');
 			link.href = selection.url;
 			link.innerHTML = "Visit on Yelp";
 			link.target = "_blank";
+			linkBlock.appendChild(link);
+			linkBlock.className = 'vertical-pad';
 
 			textDisplay.appendChild(title);
 			textDisplay.appendChild(rating);
 			textDisplay.appendChild(reviewCount);
 			textDisplay.appendChild(description);
 			textDisplay.appendChild(address);
-			textDisplay.appendChild(link);
+			textDisplay.appendChild(linkBlock);
 
 
 			display.appendChild(image);

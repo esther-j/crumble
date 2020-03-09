@@ -12,24 +12,32 @@
   </head>
 
   <body id="selection-body">
-    <!-- vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv -->    
-    <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
-      <div class="stackedcards-container"></div>
-        <div class="stackedcards--animatable stackedcards-overlay left">
-          <i class="glyphicon glyphicon-remove"></i>
+    <header>
+      <ul>
+        <li id="main-label"><a href="index.html">crumble</a></li>
+        <li id="about-label"><a href="about.html">About</a></li>
+      </ul>
+    </header>
+    <main>
+      <!-- vvv Credit: https://codepen.io/bmarcelino/pen/vRYPXV vvv -->    
+      <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+        <div class="stackedcards-container"></div>
+          <div class="stackedcards--animatable stackedcards-overlay left">
+            <i class="glyphicon glyphicon-remove-circle"></i>
+          </div>
+          <div class="stackedcards--animatable stackedcards-overlay right">
+            <i class="glyphicon glyphicon-heart"></i>
+          </div>
         </div>
-        <div class="stackedcards--animatable stackedcards-overlay right">
-          <i class="glyphicon glyphicon-heart"></i>
+      <div class="global-actions">
+        <div class="action-button left-button">
+          <i class="glyphicon glyphicon-remove left-action"></i>
         </div>
-      </div>
-    <div class="global-actions">
-      <div class="action-button">
-        <i class="glyphicon glyphicon-remove left-action"></i>
-      </div>
-      <div class="action-button">
-        <i class="glyphicon glyphicon-heart right-action"></i>
-      </div>
-  </div>  
+        <div class="action-button right-button">
+          <i class="glyphicon glyphicon-heart right-action"></i>
+        </div>
+    </div>  
+  </main>
     <!-- ^^^ Credit: https://codepen.io/bmarcelino/pen/vRYPXV ^^^ --> 
   </body>
 </html>
