@@ -163,7 +163,7 @@ var dispCategoryList = new Set();
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function(event) {
-	// document.getElementById("range-slider").value = "2";
+	document.getElementById("range-slider").value = "1";
 
 	var longitude;
 	var latitude;
