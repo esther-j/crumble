@@ -629,15 +629,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// fetch results from preferences
 	if (sessionStorage.results) {
 		var data = JSON.parse(sessionStorage.results);
-		console.log(data);
 		createCards(data.businesses);
 	} else {
-		console.log("Could not retrieve data");
+		alert("Could not retrieve data");
 	}
 
 	// create cards for each business
 	function createCards(data) {
-		console.log(document.getElementsByClassName('stackedcards-container'));
 		var container = document.getElementsByClassName('stackedcards-container')[0];
 		for (business of data) {
 			// create card item
@@ -749,7 +747,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				imgSrc = dir.concat("5.png");
 				break;
 			default:
-				console.log("error");
+				alert("Stars rating image error");
 		}
 		return imgSrc;
 	}

@@ -131,11 +131,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     	}
     }
 
-    // 
+    // go to pref page if user chooses to repeat
 	document.getElementById("repeat-button").addEventListener("click", function() {
 		document.location.href = "preferences.html";
 	});
 
+	// get string of categories given category list
 	function getCategoriesStr(categories) {
 		var categoryTitles = [];
 		for (category of categories) {
@@ -180,11 +181,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				imgSrc = dir.concat("5.png");
 				break;
 			default:
-				console.log("error");
+				alert("Stars rating image error");
 		}
 		return imgSrc;
 	}
 
+	// convert from meters to miles
 	function convertMetersToMiles(meters) {
 		var miles = meters / 1609.34;
 		return Math.round(miles * 10) / 10

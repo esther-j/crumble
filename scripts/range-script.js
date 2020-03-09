@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   var $r = $('input[type="range"]');
   var $ruler = $('<div class="rangeslider__ruler" />');
-  console.log("sup");
   // Initialize
   $r.rangeslider({
     polyfill: false,

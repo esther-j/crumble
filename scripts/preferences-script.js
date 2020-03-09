@@ -222,13 +222,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var isOpen = document.getElementById("open-checkbox").checked;
 		distance = getDistanceMeters(distance);
 
-		console.log(priceStr);
-		console.log(categoryStr);
-		console.log("distance");
-		console.log(isOpen);
-		console.log(longitude);
-		console.log(latitude);
-
 		// Handle blank fields
 		var onExit = false;
 		setTimeout(function() {
@@ -273,13 +266,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						alert("Error: Please try submitting again");
 					}
 				}).then(function(results) {
-				 	console.log("success");
 				 	if (results.total == 0) {
 				 		alert("Couldn't find any locations with the given categories");
 				 		return;
 				 	}
 				 	results = JSON.stringify(results);
-				    console.log(results);
 				    sessionStorage.results = results;
 				   	sessionStorage.latitude = latitude.toString();
 					sessionStorage.longitude = longitude.toString();
