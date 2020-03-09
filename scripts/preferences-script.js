@@ -167,10 +167,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	var longitude;
 	var latitude;
-	var timeout = 100;
+	var timeout = 200;
 	setTimeout(function() {
 		getLocation();
-	});
+	}, timeout);
 
 	// Source: https://www.w3schools.com/html/html5_geolocation.asp
 	// Get the location of a user
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		// Get whether must be open
 		var isOpen = document.getElementById("open-checkbox").checked;
-		distance = Number(distance) * 1000;
+		distance = getDistanceMeters(distance);
 
 		console.log(priceStr);
 		console.log(categoryStr);
@@ -234,10 +234,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		setTimeout(function() {
 			if (typeof(longitude) == "undefined" || typeof(latitude) == "undefined") {
 				onExit = true;
-				alert("Please enable location detection");
-				setTimeout(function() {
-					getLocation();
-				}, timeout);
+				alert("Please enable location detection (or try resubmitting because of delay)");
+				getLocation();
 			}
 			if (typeof(priceStr) == "undefined") {
 				onExit = true;
@@ -292,6 +290,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 	});
 });
+
+// get the location in meters for a given distance string
+function getDistanceMeters(distance) {
+	var numDistance = Number(distance);
+	var numMeters = 1609.34;
+	var miles;
+	switch (numDistance) {
+		case 1:
+			miles = 0.5;
+			break;
+		case 2:
+			miles = 1;
+			break;
+		case 3:
+			miles = 2;
+			break;
+		case 4:
+			miles = 3;
+		case 5:
+			miles = 5;
+	}
+	return Math.round(miles * numMeters);
+}
 
 // Function adds a given category to the frontend
 function addDisplayCategory(category) {

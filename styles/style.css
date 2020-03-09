@@ -68,30 +68,30 @@ p {
   margin: 0;
 }
 
-ul {
+#nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #FF7A00; /* Orange */
+    line-height: 1;
 
 }
 
-li a {
+.nav-item a {
     font-family: 'Roboto';
     font-weight: 900;
     display: block;
     color: white;
     text-align: center;
     padding: 10px 16px;
-    text-decoration: none;
+    text-decoration: none !important;
 
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
+.nav-item a:hover {
     color: white;
-    text-decoration: none;
+    text-decoration: none !important;
     opacity: 40%;
 }
 
@@ -105,6 +105,8 @@ li a:hover {
     margin-right: 50px;
     float: right;
     padding-top: 8px;
+    font-size: 16px !important;
+
 }
 
 /********************************** Main page CSS **********************************/
@@ -316,3 +318,12 @@ input.category-input[type="radio"]:checked ~ div{
     margin-bottom: 20px;
 }
 
+/******************************* About page CSS *******************************/
+.about-text {
+    font-weight: 200;
+    opacity: 60%;
+}
+
+.about-subtitle {
+    opacity: 70%;
+}
